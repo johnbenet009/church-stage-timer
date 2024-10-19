@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positive Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="timer-controls">
+      <div class="time-preview">
+        <span class="preview-time">00:00</span>
+        <span class="preview-label">Setup</span>
+      </div>
+      <div class="buttons">
+        <button class="control" onclick="decreaseMinutes(1)">- 1 Min</button>
+        <button class="control" onclick="increaseMinutes(1)">+ 1 Min</button><br />
+        <button class="control" onclick="decreaseMinutes(5)">- 5 Min</button>
+        <button class="control" onclick="increaseMinutes(5)">+ 5 Min</button><br />
+        <button class="control" onclick="decreaseMinutes(30)">- 30 Min</button>
+        <button class="control" onclick="increaseMinutes(30)">+ 30 Min</button><br />
+        <button class="action resetbutton" onclick="resetProgram()">Reset</button>
+        <button class="action actionbutton" onclick="startTimer()">Start Timer</button>
+      </div>
+    </div>
+
+    <div class="live-preview">
+      <div class="live-screen">
+        <span class="live-time">00:00</span>
+        <marquee scrollamount="3"><div class="message-container" style="display: none;" ></div> </marquee>
+        <span class="live-label">Live</span>
+      </div>
+
+
+      <div class="buttons">
+      
+        <button class="action resetbutton" onclick="resetLive()">Restart Timer</button>
+        <button class="action" onclick="flashBackground()">Attention Flash</button>
+      </div>
+
+<br /><br />
+      <div class="buttons">
+        <input type="text" class="alertarea" id="messageInput" placeholder="Screen Alert message..."><br />
+        <button class="action" onclick="sendMessage()">Send Alert</button>
+        <button class="action" onclick="flashMessage()">Flash Alert</button>
+        <button class="action" onclick="clearAndSendAlert()">Clear</button>
+      </div>
+      
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+  function clearAndSendAlert() {
+    document.getElementById('messageInput').value = '';
+    document.querySelector('button[onclick="sendMessage()"]').click();
+  }
+ </script>
+</body>
+</html>

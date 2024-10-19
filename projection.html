@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positive Timer Live</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+    }
+    .timer-display {
+      font-size: 50rem;
+      color: white;
+    }
+    .message-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 15rem;
+      width: 100%;
+      background-color: red;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer-display">00:00</div>
+  <marquee class="message-container" scrollamount="35"></marquee>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    ipcRenderer.on('update-timer', (event, remainingTime) => {
+      document.querySelector('.timer-display').textContent = remainingTime;
+    });
+
+    ipcRenderer.on('timer-ended', () => {
+      document.querySelector('.timer-display').textContent = "00:00";
+    });
+
+    ipcRenderer.on('display-message', (event, message) => {
+      document.querySelector('.message-container').textContent = message;
+    });
+
+    ipcRenderer.on('flash-message', () => {
+      let flashCount = 0;
+      const flashInterval = setInterval(() => {
+        document.querySelector('.message-container').style.visibility = flashCount % 2 === 0 ? 'visible' : 'hidden';
+        flashCount++;
+        if (flashCount >= 5) clearInterval(flashInterval);
+      }, 500);
+    });
+
+    ipcRenderer.on('reset-live', () => {
+      document.querySelector('.timer-display').textContent = '00:00';
+      document.querySelector('.message-container').textContent = '';
+    });
+
+    // Flash entire background color
+    ipcRenderer.on('flash-background', (event, color) => {
+      document.body.style.backgroundColor = color;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "church-stage-timer",
+  "version": "1.0.0",
+  "description": "Church / Stage timer Electron App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "keywords": [],
+  "author": "Positive Developer johnbenet0009@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.0.1",
+    "electron-builder": "^25.1.8",
+    "rcedit": "^4.0.1"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
