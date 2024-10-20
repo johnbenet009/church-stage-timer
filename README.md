@@ -36,6 +36,7 @@ $ npm start
 ## Building
 
 npx electron-packager . --out=dist --overwrite --icon=icon.ico --platform=win32 --arch=x64 => for 64 bit
+
 npx electron-packager . --out=dist --overwrite --icon=icon.ico --platform=win32 --arch=ia32 => for 32 bit
 
 
