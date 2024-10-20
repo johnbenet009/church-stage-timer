@@ -29,8 +29,13 @@ Install dev dependencies:
 
 sh
 $ npm install --save-dev
-$ npm test
+$ npm start
 
+
+
+## Building
+
+npx electron-packager . --out=dist --overwrite --icon=icon.ico --platform=win32 --arch=x64
 
 ## Contributing
 
@@ -47,6 +52,3 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 Copyright © 2024 [Positive Developer](mailto:johnbenet0009@gmail.com)  
 Licensed under the ISC license.
-
-
-You can copy and paste this text directly into your GitHub repository's README file.
