@@ -1,41 +1,52 @@
+Here’s a complete GitHub README for your **Church / Stage Timer Electron App** in plain text format:
+
+
 # church-stage-timer
 
 > Church / Stage timer Electron App
 
 ## Install
 
-Install with [npm](https://www.npmjs.com/)
+Download the zip file or clone the repository, then run:
 
-```sh
-$ npm i church-stage-timer --save-dev
-```
+sh
+$ npm install
+
 
 ## Usage
 
-```js
-var church-stage-timer = require('church-stage-timer');
-```
+To start the application, run:
+
+sh
+$ npm start
+
+
+If you make significant changes by adding new features, kindly push to a new branch so it can be merged. Thank you!
 
 ## Running tests
 
 Install dev dependencies:
 
-```sh
-$ npm i -d && npm test
-```
+sh
+$ npm install --save-dev
+$ npm test
+
 
 ## Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/johnbenet009/church-stage-timer/issues)
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/johnbenet009/church-stage-timer/issues).
 
 ## Author
 
-**Positive Developer johnbenet0009@gmail.com**
+**Positive Developer** johnbenet0009@gmail.com
 
-* [github/](https://github.com/johnbenet009)
-* [whatsapp/](https://wa.me/2349014532386)
+* [GitHub](https://github.com/johnbenet009)
+* [WhatsApp](https://wa.me/2349014532386)
 
 ## License
 
-Copyright © 2024 [Positive Developer johnbenet0009@gmail.com](#Positive Developer johnbenet0009@gmail.com)
+Copyright © 2024 [Positive Developer](mailto:johnbenet0009@gmail.com)  
 Licensed under the ISC license.
+
+
+You can copy and paste this text directly into your GitHub repository's README file.

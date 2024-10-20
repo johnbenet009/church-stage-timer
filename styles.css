@@ -101,6 +101,19 @@ font-weight: bold;
   color: #000 !important;
 }
 
+
+.stopbutton{
+  background-color: red !important;
+  color: #fff !important;
+}
+
+
+.attentionbtn{
+  background-color: #AA2AFF !important;
+  color: #fff !important;
+  width: 100%;
+}
+
 .actionbutton{
   background-color: green !important;
 }

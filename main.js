@@ -17,9 +17,13 @@ function createWindow() {
   });
   mainWindow.loadFile('index.html');
 
+
+
   const menu = Menu.buildFromTemplate([
-    { label: 'Detect Monitor', click: () => mainWindow.webContents.send('refresh-display-list') },
-    { label: 'Refresh', click: () => mainWindow.reload() },
+    {
+      label: 'Refresh',
+      click: () => mainWindow.reload()
+    },
     {
       label: 'About',
       click: () => dialog.showMessageBox(mainWindow, {
@@ -29,7 +33,11 @@ function createWindow() {
     },
     { label: 'Exit', click: () => app.quit() }
   ]);
-  mainWindow.setMenu(menu);
+
+
+
+
+  Menu.setApplicationMenu(menu);  // Set the menu here
 
   mainWindow.on('close', () => {
     if (projectionWindow) {
@@ -38,8 +46,6 @@ function createWindow() {
     }
   });
 }
-
-
 
 app.on('ready', () => {
   const splashScreen = new BrowserWindow({
@@ -77,25 +83,19 @@ app.on('ready', () => {
   screen.on('display-added', () => mainWindow.webContents.send('refresh-display-list'));
   screen.on('display-removed', () => mainWindow.webContents.send('refresh-display-list'));
 
-
-
   mainWindow.on('close', () => {
     if (projectionWindow) {
       projectionWindow.close();
       projectionWindow = null;
     }
   });
-
 });
-
-
-
-
 
 ipcMain.handle('check-secondary-display', () => {
   const displays = screen.getAllDisplays();
   return displays.length > 1; 
 });
+
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
@@ -214,7 +214,6 @@ function flashProjectionScreen() {
     if (flashCount >= 8) clearInterval(flashInterval);
   }, 250);
 }
-
 
 function timeToSeconds(time) {
   const [minutes, seconds] = time.split(':').map(Number);

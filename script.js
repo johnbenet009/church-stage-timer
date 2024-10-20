@@ -118,6 +118,17 @@ function flashBackground() {
   });
 }
 
+function stopTimer() {
+const time = `0:0`;
+  ipcRenderer.send('start-timer', time);
+  updateLiveTime(); 
+  
+  minutes = 0;
+  seconds = 0;
+  updateLiveTime();
+}
+
+
 function sendMessage() {
   const message = document.getElementById('messageInput').value;
   ipcRenderer.send('send-message', message);
