@@ -7,16 +7,14 @@
 
 Download the zip file or clone the repository, then run:
 
-sh
-$ npm install
+npm install
 
 
 ## Usage
 
 To start the application, run:
 
-sh
-$ npm start
+npm start
 
 
 If you make significant changes by adding new features, kindly push to a new branch so it can be merged. Thank you!
@@ -25,9 +23,8 @@ If you make significant changes by adding new features, kindly push to a new bra
 
 Install dev dependencies:
 
-sh
-$ npm install --save-dev
-$ npm start
+npm install --save-dev
+npm start
 
 
 
