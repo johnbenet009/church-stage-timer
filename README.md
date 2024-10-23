@@ -1,5 +1,3 @@
-Here’s a complete GitHub README for your **Church / Stage Timer Electron App** in plain text format:
-
 
 # church-stage-timer
 
