@@ -1,3 +1,4 @@
+This project has been archived in favor of a newer, more feature-rich version, which can be found at: https://github.com/johnbenet009/flexible-stage-timer
 
 # church-stage-timer
 
